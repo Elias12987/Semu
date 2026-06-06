@@ -17,12 +17,14 @@ CARD_NUMBER = "6219-8619-2847-2389"  # شماره کارتت
 CARD_OWNER = "ایران بوصیدی"
 
 # ─────────────────────────────────────────
-#  پلن‌ها
+#  پلن‌ها (بر اساس حجم)
 # ─────────────────────────────────────────
 PLANS = {
-    "1m": {"name": "۱ ماهه",  "price": 50_000,  "Net": 5gb},
-    "3m": {"name": "۳ ماهه",  "price": 130_000, "days": 10gb},
-    "6m": {"name": "۶ ماهه",  "price": 240_000, "days": 20gb},
+    "1gb":  {"name": "۱ گیگابایت",   "price": 20_000,  "volume": "1GB"},
+    "2gb":  {"name": "۲ گیگابایت",   "price": 35_000,  "volume": "2GB"},
+    "5gb":  {"name": "۵ گیگابایت",   "price": 70_000,  "volume": "5GB"},
+    "10gb": {"name": "۱۰ گیگابایت",  "price": 120_000, "volume": "10GB"},
+    "20gb": {"name": "۲۰ گیگابایت",  "price": 200_000, "volume": "20GB"},
 }
 
 # ─────────────────────────────────────────
@@ -244,6 +246,7 @@ async def select_plan_callback(update: Update, context: ContextTypes.DEFAULT_TYP
 
     await query.edit_message_text(
         f"📦 پلن انتخابی: {plan['name']}\n"
+        f"📊 حجم: {plan['volume']}\n"
         f"💰 قیمت: {plan['price']:,} تومان\n"
         f"👛 موجودی کیف پول: {wallet:,} تومان\n\n"
         "روش پرداخت رو انتخاب کن:",
@@ -316,7 +319,7 @@ async def receive_receipt(update: Update, context: ContextTypes.DEFAULT_TYPE):
         caption = (
             f"🧾 رسید جدید — سفارش #{oid}\n"
             f"کاربر: {user.id} (@{user.username})\n"
-            f"پلن: {plan['name']} — {plan['price']:,} تومان\n\n"
+            f"پلن: {plan['name']} ({plan['volume']}) — {plan['price']:,} تومان\n\n"
             f"تأیید: /approve_{oid}\n"
             f"رد: /reject_{oid}"
         )
@@ -480,7 +483,7 @@ async def admin_approve(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await context.bot.send_message(
             user_id,
             f"✅ پرداخت تأیید شد!\n\n"
-            f"پلن {plan.get('name','')} فعال شد 🎉\n"
+            f"پلن {plan.get('name','')} ({plan.get('volume','')}) فعال شد 🎉\n"
             f"کانفیگ شما:\n\n[اینجا کانفیگ رو قرار بده]\n\nشماره سفارش: #{oid}"
         )
         await update.message.reply_text(f"✅ سفارش #{oid} تأیید و کاربر {user_id} مطلع شد.")
@@ -540,20 +543,4 @@ def main():
     app.add_handler(CallbackQueryHandler(check_join_callback,    pattern="^check_join$"))
     app.add_handler(CallbackQueryHandler(buy_callback,           pattern="^buy$"))
     app.add_handler(CallbackQueryHandler(select_plan_callback,   pattern="^selectplan_"))
-    app.add_handler(CallbackQueryHandler(pay_wallet_callback,    pattern="^pay_wallet_"))
-    app.add_handler(CallbackQueryHandler(test_callback,          pattern="^test$"))
-    app.add_handler(CallbackQueryHandler(topup_callback,         pattern="^topup$"))
-    app.add_handler(CallbackQueryHandler(account_callback,       pattern="^account$"))
-    app.add_handler(CallbackQueryHandler(support_callback,       pattern="^support$"))
-    app.add_handler(CallbackQueryHandler(back_main_callback,     pattern="^back_main$"))
-
-    # دستورات ادمین
-    app.add_handler(MessageHandler(filters.Regex(r"^/approve_\d+$"),                  admin_approve))
-    app.add_handler(MessageHandler(filters.Regex(r"^/topup_approve_\d+_\d+_\d+$"),   admin_topup_approve))
-    app.add_handler(MessageHandler(filters.Regex(r"^/reject_\d+$"),                   admin_reject))
-
-    print("✅ بات در حال اجراست...")
-    app.run_polling()
-
-if __name__ == "__main__":
-    main()
+    app.add_handler(CallbackQueryHandler(pay_walle 
