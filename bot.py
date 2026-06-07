@@ -12,7 +12,7 @@ from telegram.ext import (
 # ─────────────────────────────────────────
 BOT_TOKEN   = "8925445808:AAGkJU3BX7f82SVG4YyvYHJALKro5xrZAhM"
 CHANNEL_ID  = "@VPN_IRONMAN"
-ADMIN_IDS   = [8471252047, 1111111111]  # آیدی دوم رو جایگزین کن
+ADMIN_IDS   = [8471252047, 8523539535]  # آیدی دوم رو جایگزین کن
 CARD_NUMBER = "6219-8619-2847-2389"
 CARD_OWNER  = "ایران بوصیدی"
 BOT_USERNAME = "your_bot_username"  # بدون @
