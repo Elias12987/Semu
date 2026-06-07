@@ -285,7 +285,8 @@ async def check_membership(update, context):
 # ═══════════════════════════════════════════
 def main_menu():
     return ReplyKeyboardMarkup([
-        [KeyboardButton("🛒 خرید VPN"), KeyboardButton("💰 افزایش موجودی")],
+        [KeyboardButton("🛒 خرید VPN") ],
+        [KeyboardButton("💰 افزایش موجودی"), KeyboardButton("🎈 تست رایگان ")],
         [KeyboardButton("👥 دعوت از دوستان"), KeyboardButton("👤 حساب من")],
         [KeyboardButton("📋 اشتراک‌های من"), KeyboardButton("📞 پشتیبانی")],
     ], resize_keyboard=True)
