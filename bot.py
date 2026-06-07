@@ -15,7 +15,7 @@ CHANNEL_ID  = "@VPN_IRONMAN"
 ADMIN_ID    = 8471252047
 CARD_NUMBER = "6219-8619-2847-2389"
 CARD_OWNER  = "ایران بوصیدی"
-BOT_USERNAME = "your_bot_username"  # بدون @
+BOT_USERNAME = "MARDAN_VPN_BOT"  # بدون @
 
 # ─────────────────────────────────────────
 #  پلن انتخابی
@@ -48,7 +48,7 @@ DISCOUNT_CODES = {
 # ─────────────────────────────────────────
 #  کانفیگ تست
 # ─────────────────────────────────────────
-TEST_CONFIG = "اینجا کانفیگ تست رو بذار"
+TEST_CONFIG = "موجود نیست ❌"
 
 # States
 WAIT_RECEIPT       = 1
