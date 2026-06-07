@@ -48,7 +48,7 @@ DISCOUNT_CODES = {
 # ─────────────────────────────────────────
 #  کانفیگ تست
 # ─────────────────────────────────────────
-TEST_CONFIG = "اینجا کانفیگ تست رو بذار"
+TEST_CONFIG = " موجود نیست ❌  "
 
 # States
 WAIT_RECEIPT       = 1
@@ -670,8 +670,8 @@ async def test_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     mark_test_used(user_id, TEST_CONFIG)
     await query.edit_message_text(
-        f"🎁 کانفیگ تست ۲۴ ساعته:\n\n`{TEST_CONFIG}`\n\n"
-        "⚠️ این کانفیگ فقط ۲۴ ساعت اعتبار دارد.\n\nبرای خرید پلن کامل 👇",
+        f"🎁 کانفیگ تست 1 ساعته:\n\n`{TEST_CONFIG}`\n\n"
+        "⚠️ این کانفیگ فقط 1 ساعت اعتبار دارد.\n\nبرای خرید پلن کامل 👇",
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup([[
             InlineKeyboardButton("🛒 خرید VPN", callback_data="buy"),
