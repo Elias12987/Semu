@@ -285,12 +285,12 @@ async def check_membership(update, context):
 # ═══════════════════════════════════════════
 def main_menu():
     return ReplyKeyboardMarkup([
-        [KeyboardButton("🛒 خرید VPN"), KeyboardButton("💰 افزایش موجودی")],
+        [KeyboardButton("🛒 خرید VPN")],
+        [KeyboardButton("🎁 تست رایگان"), KeyboardButton("💰 افزایش موجودی")],
         [KeyboardButton("👥 دعوت از دوستان"), KeyboardButton("👤 حساب من")],
         [KeyboardButton("📋 اشتراک‌های من"), KeyboardButton("📞 پشتیبانی")],
-        [KeyboardButton("🎈 تست رایگان")
     ], resize_keyboard=True)
-
+    
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     referred_by = None
@@ -401,6 +401,14 @@ async def keyboard_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         for s in SUPPORT_USERS:
             support_text += "👤 " + s + "\n"
         await update.message.reply_text(support_text)
+
+elif text == "🎁 تست رایگان":
+        await update.message.reply_text(
+            "🎁 تست رایگان\n\n"
+            "😔 متأسفانه در حال حاضر تست رایگان موجود نیست!\n\n"
+            "🔜 به زودی فعال میشه...\n"
+            "📞 برای اطلاعات بیشتر با پشتیبانی تماس بگیر"
+        )
 
 # ═══════════════════════════════════════════
 #  خرید VPN
