@@ -15,7 +15,7 @@ CHANNEL_ID  = "@VPN_IRONMAN"
 ADMIN_ID    = 8471252047
 CARD_NUMBER = "6219-8619-2847-2389"
 CARD_OWNER  = "ایران بوصیدی"
-BOT_USERNAME = "your_bot_username"  # بدون @
+BOT_USERNAME = "MARDAN_VPN_BOT"  # بدون @
 
 # ─────────────────────────────────────────
 #  پلن انتخابی
@@ -749,7 +749,7 @@ async def support_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     await query.edit_message_text(
-        "📞 پشتیبانی\n\nبرای ارتباط با پشتیبانی:\n👤 @your_support_username",
+        "📞 پشتیبانی\n\nبرای ارتباط با پشتیبانی:\n👤 @Ali2011Ali2011_Ali",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🏠 منوی اصلی", callback_data="back_main")]])
     )
 
