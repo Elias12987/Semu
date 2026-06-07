@@ -15,7 +15,7 @@ CHANNEL_ID  = "@VPN_IRONMAN"
 ADMIN_IDS   = [8471252047, 1111111111]  # آیدی دوم رو جایگزین کن
 CARD_NUMBER = "6219-8619-2847-2389"
 CARD_OWNER  = "ایران بوصیدی"
-BOT_USERNAME = "your_bot_username"  # بدون @
+BOT_USERNAME = "MARDAN_VPN_BOT"  # بدون @
 SUPPORT_USERS = ["@Ali2011Ali2011_Ali", "@MARDAN_CORE"]
 
 # ─────────────────────────────────────────
@@ -288,6 +288,7 @@ def main_menu():
         [KeyboardButton("🛒 خرید VPN"), KeyboardButton("💰 افزایش موجودی")],
         [KeyboardButton("👥 دعوت از دوستان"), KeyboardButton("👤 حساب من")],
         [KeyboardButton("📋 اشتراک‌های من"), KeyboardButton("📞 پشتیبانی")],
+        [KeyboardButton("🎈 تست رایگان")
     ], resize_keyboard=True)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
