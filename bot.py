@@ -15,12 +15,12 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 if not BOT_TOKEN:
     raise ValueError("BOT_TOKEN environment variable not set!")
 
-CHANNEL_ID = -1002371447430
+CHANNEL_ID = @VPN_IRONMAN
 ADMIN_PASSWORD = "ALIASMARDAN"
 ADMIN_IDS = []
 CARD_NUMBER = "6219-8619-2847-2389"
 CARD_OWNER = "ایران بوصیدی"
-BOT_USERNAME = "alii_nazer_bot"
+BOT_USERNAME = "MARDAN_VPN_BOT"
 SUPPORT_USERS = ["@Ali2011Ali2011_Ali", "@MARDAN_CORE"]
 
 # ========== تنظیمات قفل فروش ==========
