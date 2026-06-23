@@ -17,3 +17,5 @@ CARD_HOLDER = os.getenv("CARD_HOLDER", "ایران بوصیدی")
 PANEL_URL = os.getenv("PANEL_URL", "https://195.38.19.57:56571/GIiXORcuW6CENAuZNr")
 PANEL_USERNAME = os.getenv("PANEL_USERNAME", "")
 PANEL_PASSWORD = os.getenv("PANEL_PASSWORD", "")
+
+PANEL_PATH = "/GIiXORcuW6CENAuZNr"
