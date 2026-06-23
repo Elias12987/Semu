@@ -41,7 +41,7 @@ CARD_HOLDER = os.getenv("CARD_HOLDER", "نام و نام خانوادگی صاح
 # آدرس پنل باید از بیرون (از اینترنت) قابل دسترسی باشد چون ریلوی روی
 # سرور دیگری اجرا می‌شود، نه روی همان VPS شما.
 # مثال: http://1.2.3.4:54321/  یا اگر روی پنل دامنه و SSL گذاشتید: https://panel.example.com/
-PANEL_URL = os.getenv("PANEL_URL", "http://YOUR_SERVER_IP:PANEL_PORT")
+PANEL_URL = os.getenv("PANEL_URL", "https://195.38.19.57:56571/GIiXORcuW6CENAuZNr")
 PANEL_USERNAME = os.getenv("PANEL_USERNAME", "admin")
-PANEL_PASSWORD = os.getenv("PANEL_PASSWORD", "admin_password")
+PANEL_PASSWORD = os.getenv("PANEL_PASSWORD", "Admin@123")
 
