@@ -214,7 +214,7 @@ async def charge_amount(message: Message, state: FSMContext):
     await state.update_data(amount=amount)
     await message.answer(
         f"مبلغ {amount:,} تومان رو به کارت زیر واریز کن:\n\n"
-        f"`{6219-8619-5197-9607}`\nبه نام: {علی فرحانی}\n\n"
+        f"`{CARD_NUMBER}`\nبه نام: {CARD_HOLDER}\n\n"
         "بعد عکس رسید رو همینجا بفرست.",
         parse_mode="Markdown",
     )
