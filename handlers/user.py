@@ -30,7 +30,7 @@ async def cmd_start(message: Message, state: FSMContext):
     await state.clear()
     db.get_or_create_user(message.from_user.id, message.from_user.username)
     await message.answer(
-        "به ربات فروش فیلترشکن خوش اومدی 👋\nاز منو یه گزینه انتخاب کن:",
+        "به ربات مردان خوش اومدی 👋\nاز منو یه گزینه انتخاب کن:",
         reply_markup=kb.main_menu(is_admin(message.from_user.id)),
     )
 
