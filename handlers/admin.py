@@ -79,9 +79,10 @@ async def add_config_receive(message: Message, state: FSMContext):
     for cfg in lines:
         db.add_config_to_pool(plan_id, cfg)
     p = get_plan(plan_id)
+    plan_name = p["name"] if p else "🎁 تست رایگان"
     total = db.count_available_configs(plan_id)
     await message.answer(
-        f"✅ {len(lines)} کانفیگ برای <b>{p['name']}</b> اضافه شد.\n"
+        f"✅ {len(lines)} کانفیگ برای <b>{plan_name}</b> اضافه شد.\n"
         f"📦 موجودی الان: {total} کانفیگ",
         parse_mode="HTML",
         reply_markup=kb.admin_menu()
