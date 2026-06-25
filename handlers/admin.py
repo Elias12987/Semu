@@ -58,9 +58,10 @@ async def add_config_select_plan(cb: CallbackQuery, state: FSMContext):
         return
     plan_id = int(cb.data.split(":")[1])
     p = get_plan(plan_id)
+    plan_name = p["name"] if p else "🎁 تست رایگان"
     await state.update_data(plan_id=plan_id)
     await cb.message.answer(
-        f"✅ پلن انتخابی: <b>{p['name']}</b>\n\n"
+        f"✅ پلن انتخابی: <b>{plan_name}</b>\n\n"
         "کانفیگ‌ها رو بفرست — هر خط یه کانفیگ:\n"
         "<i>(مثلاً vless://... یا vmess://... یا ساب‌لینک)</i>",
         parse_mode="HTML"
