@@ -12,6 +12,8 @@ def main_menu(is_admin=False):
         [KeyboardButton(text="📦 سرویس‌های من"), KeyboardButton(text="💰 کیف پول")],
         [KeyboardButton(text="🎫 پشتیبانی")],
     ]
+[KeyboardButton(text=" 🔌 آموزش اتصال ")],
+    ]
     if is_admin:
         buttons.append([KeyboardButton(text="⚙️ پنل مدیریت")])
     return ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
