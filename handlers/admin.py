@@ -258,5 +258,5 @@ async def stats(message: Message):
     orders = db.count_orders()
     total_bal = sum(u["balance"] for u in users)
     await message.answer(
-        f"📊 آمار:\n👥 کاربران: {len(users)}\n📦 سفارش‌ها: {orders}\n💰 مجموع موجودی: {total_bal:,} تومان"
+        f"📊 آمار:\n👥 کاربران: {len(users)}\n📦 سفارش‌ها: {orders}\n💰  موجودی: {total_bal:,} تومان"
     )
