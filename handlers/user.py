@@ -3,6 +3,10 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
+from config import FREE_TEST_PLAN
+
+"⏳ اعتبار: {FREE_TEST_PLAN['duration_days']} روز\n"
+"📦 حجم اختصاصی: {FREE_TEST_PLAN['traffic_gb']} گیگابایت\n"
 
 import database as db
 import keyboards as kb
