@@ -275,3 +275,19 @@ async def support_send(message: Message, state: FSMContext):
         except Exception:
             pass
     await state.clear()
+
+# ── سرویس‌های من ────────────────────────────────────────
+
+@router.message(F.text == "آموزش اتصال 🔌")
+async def my_orders(message: Message):
+    db.get_or_create_user(message.from_user.id, message.from_user.username)
+    orders = db.list_orders(message.from_user.id)
+    done = [o for o in orders if o["config"]]
+    if not done:
+        await message.answer(" اتصال در برنامه V2rayng https://t.me/VPN_IRONMAN/15")
+        return
+    for o in done:
+        p = db.get_product(o["product_id"]) if o["product_id"] else None
+        name = (p["name"] if p else "تست رایگان")
+        await message.answer(f"📦 {name}\n\n`{o['config']}`", parse_mode="Markdown")
+
